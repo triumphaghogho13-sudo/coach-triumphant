@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="Join Coach Triumphant's free 3-day Ghostwriting Masterclass. Discover ghostwriting, develop your writing skills and explore online opportunities.">
+<title>Free Ghostwriting Masterclass | Coach Triumphant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#101010;
+  --panel:#191919;
+  --gold:#e7bb68;
+  --lightgold:#f8dda5;
+  --white:#fff;
+  --muted:#bdb8af;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--black);color:var(--white);
+  font-family:'DM Sans',sans-serif;line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{
+  height:76px;display:flex;align-items:center;
+  justify-content:space-between;border-bottom:1px solid #292929;
+}
+.logo{font-weight:800;letter-spacing:2px;font-size:15px}
+.logo span{color:var(--gold)}
+.btn{
+  display:inline-block;background:var(--gold);color:#17120a;
+  padding:14px 24px;border-radius:5px;font-weight:800;
+  transition:.25s;border:0;cursor:pointer;
+}
+.btn:hover{background:var(--lightgold);transform:translateY(-2px)}
+.outline{
+  display:inline-block;border:1px solid var(--gold);
+  color:var(--gold);padding:12px 22px;border-radius:5px;
+  font-weight:700;
+}
+.eyebrow{
+  color:var(--gold);font-size:12px;font-weight:800;
+  letter-spacing:3px;text-transform:uppercase;
+}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+.hero{
+  padding:105px 0 95px;
+  background:radial-gradient(ellipse at 85% 15%,#49351d 0%,transparent 38%),
+             linear-gradient(130deg,#111,#191713);
+}
+.hero h1{
+  max-width:850px;font-size:clamp(43px,7vw,76px);
+  margin:20px 0;
+}
+.gold{color:var(--gold)}
+.hero p{max-width:650px;color:#d0cbc3;font-size:18px}
+.actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:30px}
+.note{font-size:13px!important;color:#aaa!important;margin-top:22px}
+.section{padding:85px 0}
+.center{text-align:center}
+.section-title{
+  font-size:clamp(32px,5vw,48px);margin:12px 0 18px;
+}
+.intro{max-width:690px;margin:0 auto 42px;color:var(--muted)}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:15px;margin-top:-1px;
+}
+.stat{
+  text-align:center;background:#1b1b1b;padding:22px 12px;
+  border:1px solid #303030;
+}
+.stat strong{display:block;color:var(--gold);font-size:18px}
+.stat span{font-size:12px;color:var(--muted)}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  background:var(--panel);padding:28px;border:1px solid #303030;
+  border-radius:9px;
+}
+.card .number{color:var(--gold);font-size:13px;font-weight:800}
+.card h3{font-size:23px;margin:13px 0}
+.card p{color:var(--muted);font-size:14px}
+.two{
+  display:grid;grid-template-columns:1fr 1fr;gap:55px;
+  align-items:center;
+}
+.coach-photo{
+  width:100%;max-width:430px;aspect-ratio:4/5;
+  object-fit:cover;object-position:center 25%;
+  border-radius:12px;border:2px solid #8b6938;
+}
+.bio p{color:var(--muted)}
+.bio h2{font-size:43px;margin:14px 0}
+.skills{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+}
+.skill{
+  background:#1c1c1c;padding:17px;border:1px solid #303030;
+  border-radius:6px;font-size:14px;
+}
+.skill:before{content:"✦ ";color:var(--gold)}
+.day{
+  border-left:3px solid var(--gold);padding:8px 0 8px 23px;
+  margin:23px 0;background:linear-gradient(90deg,#211d16,transparent);
+}
+.day h3{margin:0 0 8px;font-size:23px}
+.day p{margin:0;color:var(--muted)}
+.audience{
+  display:grid;grid-template-columns:1fr 1fr;gap:13px;
+}
+.audience div{
+  padding:17px;background:#1c1c1c;border:1px solid #303030;
+  border-radius:6px;
+}
+.registration{
+  background:radial-gradient(ellipse at top,#46351d,transparent 55%),#171717;
+  border-top:1px solid #4c3920;border-bottom:1px solid #4c3920;
+}
+.form-box{
+  max-width:620px;margin:auto;background:#202020;
+  border:1px solid #55452c;border-radius:12px;padding:35px;
+}
+.form-box h2{text-align:center;font-size:40px;margin:12px 0}
+.form-box>p{text-align:center;color:var(--muted)}
+label{display:block;font-size:13px;margin:16px 0 6px;font-weight:700}
+input,select{
+  width:100%;padding:15px;border:1px solid #444;
+  border-radius:5px;background:#111;color:white;
+  font:inherit;
+}
+input:focus,select:focus{outline:1px solid var(--gold)}
+.form-box button{width:100%;margin-top:22px;font-size:15px}
+.small{text-align:center;font-size:12px;color:#aaa}
+.faq{max-width:780px;margin:auto}
+details{padding:20px 0;border-bottom:1px solid #333}
+summary{cursor:pointer;font-weight:700}
+details p{color:var(--muted)}
+.final{text-align:center;padding:80px 0}
+.final h2{font-size:clamp(32px,5vw,48px);max-width:720px;margin:15px auto}
+footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
+@media(max-width:760px){
+ .hero{padding:75px 0}
+ .two{grid-template-columns:1fr;gap:30px}
+ .cards{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr}
+ .section{padding:65px 0}
+ .form-box{padding:25px 18px}
+ .skills,.audience{grid-template-columns:1fr}
+ .coach-photo{max-width:100%}
+}
+</style>
+</head>
+
+<body>
+<header class="container">
+  <a class="logo" href="#">COACH <span>TRIUMPHANT</span></a>
+  <a href="#register" class="btn">REGISTER FREE</a>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container">
+  <div class="eyebrow">Coach Triumphant Presents</div>
+  <h1>TURN YOUR WORDS INTO <span class="gold">WEALTH.</span></h1>
+  <p>
+   Discover how to become a ghostwriter, develop a valuable
+   digital skill and explore opportunities to earn online
+   using the power of writing.
+  </p>
+  <p>
+   Join my FREE 3-Day Ghostwriting Masterclass and discover
+   how the ghostwriting industry works, even if you are a beginner.
+  </p>
+  <div class="actions">
+   <a class="btn" href="#register">JOIN THE FREE MASTERCLASS →</a>
+   <a class="outline" href="#learn">DISCOVER WHAT YOU'LL LEARN</a>
+  </div>
+  <p class="note">3 DAYS · 100% FREE · WHATSAPP TRAINING</p>
+ </div>
+</section>
+
+<div class="container stats">
+ <div class="stat"><strong>3 DAYS</strong><span>Free Training</span></div>
+ <div class="stat"><strong>BEGINNER FRIENDLY</strong><span>No professional experience required</span></div>
+ <div class="stat"><strong>WHATSAPP</strong><span>Learn from your phone</span></div>
+</div>
+
+<section class="section" id="learn">
+ <div class="container center">
+  <div class="eyebrow">Your learning journey</div>
+  <h2 class="section-title">What Will You Learn?</h2>
+  <p class="intro">
+   Get introduced to ghostwriting and understand the
+   foundations of turning writing into a professional service.
+  </p>
+
+  <div class="cards">
+   <article class="card">
+    <div class="number">DAY 01</div>
+    <h3>Understanding Ghostwriting</h3>
+    <p>What ghostwriting is, how it works, the different
+    types of ghostwriting and where writers fit into the industry.</p>
+   </article>
+   <article class="card">
+    <div class="number">DAY 02</div>
+    <h3>Writing Like a Professional</h3>
+    <p>Understand writing techniques, client requirements,
+    content quality and how to develop your writing skills.</p>
+   </article>
+   <article class="card">
+    <div class="number">DAY 03</div>
+    <h3>Finding Clients and Getting Paid</h3>
+    <p>Explore potential client opportunities, how to present
+    your services, pricing basics and building your portfolio.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container two">
+  <div>
+   <div class="eyebrow">Meet your instructor</div>
+   <h2 class="section-title">Learn With Coach Triumphant</h2>
+   <p style="color:var(--muted)">
+    Coach Triumphant is a multi-skilled digital entrepreneur,
+    professional ghostwriter, digital marketer, certified author
+    and technology enthusiast passionate about helping people
+    discover opportunities in the digital world.
+   </p>
+   <p style="color:var(--muted)">
+    Her experience spans ghostwriting, creative writing,
+    video editing, web design, YouTube automation and digital
+    marketing. She is an author on recognised storytelling
+    platforms including GoodNovel and Pocket FM.
+   </p>
+   <p style="color:var(--muted)">
+    She has also earned professional technology and learning
+    certificates from institutions including HP and BYU, among
+    others. Her goal is to help aspiring digital professionals
+    develop practical skills and confidence.
+   </p>
+  </div>
+  <div>
+   <img src="coach-triumphant.jfif" class="coach-photo"
+    alt="Coach Triumphant, Ghostwriting Masterclass instructor">
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container center">
+  <div class="eyebrow">More than just writing</div>
+  <h2 class="section-title">Meet Your Multi-Skilled Coach</h2>
+  <p class="intro">Experience across several creative and digital fields.</p>
+  <div class="skills">
+   <div class="skill">Ghostwriting and Creative Writing</div>
+   <div class="skill">Digital Marketing</div>
+   <div class="skill">Video Editing</div>
+   <div class="skill">Website Design</div>
+   <div class="skill">YouTube Automation</div>
+   <div class="skill">Digital Entrepreneurship</div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="center">
+   <div class="eyebrow">Is this for you?</div>
+   <h2 class="section-title">Who Should Join?</h2>
+   <p class="intro">This class is designed for people who want to
+   learn digital skills and explore online opportunities.</p>
+  </div>
+  <div class="audience">
+   <div>✓ People who want to earn online</div>
+   <div>✓ Beginners with no writing experience</div>
+   <div>✓ Aspiring freelance writers</div>
+   <div>✓ Students and young entrepreneurs</div>
+   <div>✓ People looking for digital skills</div>
+   <div>✓ Anyone interested in ghostwriting</div>
+  </div>
+ </div>
+</section>
+
+<section class="section registration" id="register">
+ <div class="container">
+  <div class="form-box">
+   <div class="eyebrow center">Your journey starts here</div>
+   <h2>Reserve Your Free Spot</h2>
+   <p>Complete the registration form and continue to WhatsApp
+   to send your application.</p>
+
+   <form id="registrationForm">
+    <label for="name">Full Name</label>
+    <input id="name" name="name" placeholder="Enter your full name" required>
+
+    <label for="phone">WhatsApp Number</label>
+    <input id="phone" name="phone" type="tel"
+     placeholder="Enter your WhatsApp number" required>
+
+    <label for="email">Email Address</label>
+    <input id="email" name="email" type="email"
+     placeholder="Enter your email address">
+
+    <label for="experience">Your writing experience</label>
+    <select id="experience" required>
+     <option value="">Select an option</option>
+     <option>I'm a complete beginner</option>
+     <option>I enjoy writing</option>
+     <option>I have some writing experience</option>
+     <option>I'm already a freelance writer</option>
+    </select>
+
+    <button class="btn" type="submit">
+     SUBMIT MY REGISTRATION →
+    </button>
+   </form>
+
+   <p class="small">
+    Your details will be included in a WhatsApp message to Coach
+    Triumphant. You must press Send to submit it.
+   </p>
+   <p class="small">
+    Class duration: 3 days. Starting date and time: To be announced.
+   </p>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container faq">
+  <div class="center">
+   <div class="eyebrow">Frequently asked questions</div>
+   <h2 class="section-title">Questions? We've Got Answers.</h2>
+  </div>
+  <details>
+   <summary>Is the class really free?</summary>
+   <p>Yes. This introductory 3-day ghostwriting masterclass is free.</p>
+  </details>
+  <details>
+   <summary>Do I need writing experience?</summary>
+   <p>No. Beginners are welcome. You only need the willingness to learn and practise.</p>
+  </details>
+  <details>
+   <summary>Where will the training take place?</summary>
+   <p>The training and class updates will be shared through WhatsApp.</p>
+  </details>
+  <details>
+   <summary>When does the class start?</summary>
+   <p>The starting date and time will be announced to registered participants.</p>
+  </details>
+  <details>
+   <summary>Will I automatically start earning after the class?</summary>
+   <p>No income is guaranteed. Ghostwriting requires learning, practice,
+   quality work and finding clients. This class introduces you to the skill
+   and its opportunities.</p>
+  </details>
+ </div>
+</section>
+
+<section class="final">
+ <div class="container">
+  <div class="eyebrow">Your opportunity to learn starts now</div>
+  <h2>Don't Just Scroll. <span class="gold">Learn a Skill.</span></h2>
+  <p style="color:var(--muted)">
+   Join Coach Triumphant's FREE 3-Day Ghostwriting Masterclass.
+  </p>
+  <a class="btn" href="#register">REGISTER FOR FREE →</a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  © <span id="year"></span> Coach Triumphant. All rights reserved.
+  <p>Free 3-Day Ghostwriting Masterclass.</p>
+ </div>
+</footer>
+
+<script>
+const COACH_WHATSAPP = "2348159713821";
+const CLASS_GROUP =
+ "https://chat.whatsapp.com/BzRiDQN9xUKDsc0QBf0UXj";
+
+document.getElementById("year").textContent =
+ new Date().getFullYear();
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(e) {
+ e.preventDefault();
+
+ const name = document.getElementById("name").value.trim();
+ const phone = document.getElementById("phone").value.trim();
+ const email = document.getElementById("email").value.trim();
+ const experience = document.getElementById("experience").value;
+
+ if (!name || !phone || !experience) {
+   alert("Please complete the required fields.");
+   return;
+ }
+
+ const message =
+ `Hello Coach Triumphant! I want to register for your FREE 3-Day Ghostwriting Masterclass.
+
+Full Name: ${name}
+WhatsApp Number: ${phone}
+Email: ${email || "Not provided"}
+Writing Experience: ${experience}
+
+I look forward to learning with you!`;
+
+ const url = "https://wa.me/" + COACH_WHATSAPP +
+ "?text=" + encodeURIComponent(message);
+
+ window.open(url, "_blank");
+});
+
+</script>
+</body>
+</html>
