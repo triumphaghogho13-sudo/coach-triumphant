@@ -7,6 +7,7 @@
 <meta name="theme-color" content="#101010">
 <meta name="description" content="Join Coach Triumphant's free 3-day Ghostwriting Masterclass. Discover ghostwriting, develop your writing skills and explore online opportunities.">
 <title>Free Ghostwriting Masterclass | Coach Triumphant</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
@@ -28,7 +29,7 @@ body{
 a{text-decoration:none;color:inherit}
 .container{width:min(1120px,90%);margin:auto}
 header{
-  height:76px;display:flex;align-items:center;
+  min-height:76px;display:flex;align-items:center;
   justify-content:space-between;border-bottom:1px solid #292929;
 }
 .logo{font-weight:800;letter-spacing:2px;font-size:15px}
@@ -36,13 +37,13 @@ header{
 .btn{
   display:inline-block;background:var(--gold);color:#17120a;
   padding:14px 24px;border-radius:5px;font-weight:800;
-  transition:.25s;border:0;cursor:pointer;
+  transition:.25s;border:0;cursor:pointer;text-align:center;
 }
 .btn:hover{background:var(--lightgold);transform:translateY(-2px)}
 .outline{
   display:inline-block;border:1px solid var(--gold);
   color:var(--gold);padding:12px 22px;border-radius:5px;
-  font-weight:700;
+  font-weight:700;text-align:center;
 }
 .eyebrow{
   color:var(--gold);font-size:12px;font-weight:800;
@@ -133,11 +134,11 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
 label{display:block;font-size:13px;margin:16px 0 6px;font-weight:700}
 input,select{
   width:100%;padding:15px;border:1px solid #444;
-  border-radius:5px;background:#111;color:white;
-  font:inherit;
+  border-radius:5px;background:#111;color:white;font:inherit;
 }
 input:focus,select:focus{outline:1px solid var(--gold)}
 .form-box button{width:100%;margin-top:22px;font-size:15px}
+.group-link{display:block;margin-top:14px}
 .small{text-align:center;font-size:12px;color:#aaa}
 .faq{max-width:780px;margin:auto}
 details{padding:20px 0;border-bottom:1px solid #333}
@@ -145,21 +146,163 @@ summary{cursor:pointer;font-weight:700}
 details p{color:var(--muted)}
 .final{text-align:center;padding:80px 0}
 .final h2{font-size:clamp(32px,5vw,48px);max-width:720px;margin:15px auto}
+.final-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
+
+/* Privacy and tracking consent notice */
+.consent-banner{
+  position:fixed;z-index:9999;bottom:16px;left:16px;right:16px;
+  max-width:650px;margin:auto;background:#202020;
+  border:1px solid #806338;border-radius:10px;padding:20px;
+  box-shadow:0 8px 35px rgba(0,0,0,.55);
+}
+.consent-banner p{font-size:13px;color:#ddd;margin:8px 0 14px}
+.consent-actions{display:flex;gap:10px;flex-wrap:wrap}
+.consent-actions button{flex:1;min-width:110px}
+.consent-decline{
+  background:transparent;color:white;border:1px solid #777;
+  padding:12px 18px;border-radius:5px;cursor:pointer;font-weight:700;
+}
+[hidden]{display:none!important}
+
 @media(max-width:760px){
- .hero{padding:75px 0}
- .two{grid-template-columns:1fr;gap:30px}
- .cards{grid-template-columns:1fr}
- .stats{grid-template-columns:1fr}
- .section{padding:65px 0}
- .form-box{padding:25px 18px}
- .skills,.audience{grid-template-columns:1fr}
- .coach-photo{max-width:100%}
+  .hero{padding:75px 0}
+  .two{grid-template-columns:1fr;gap:30px}
+  .cards{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .section{padding:65px 0}
+  .form-box{padding:25px 18px}
+  .skills,.audience{grid-template-columns:1fr}
+  .coach-photo{max-width:100%}
+  header{gap:12px}
+  header .btn{padding:11px 14px;font-size:12px}
 }
 </style>
+
+<!-- Meta Pixel: loads only after visitor consent -->
+<script>
+(function () {
+  const META_PIXEL_ID = "1527467302854988";
+  let pixelLoaded = false;
+  let viewContentPending = false;
+  let viewContentSent = false;
+
+  function getConsent() {
+    try {
+      return localStorage.getItem("coachTriumphantMetaConsent");
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function loadMetaPixel() {
+    if (pixelLoaded || getConsent() !== "accepted") return;
+
+    pixelLoaded = true;
+
+    !function(f,b,e,v,n,t,s) {
+      if(f.fbq)return;
+      n=f.fbq=function() {
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
+      };
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=true;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);
+      t.async=true;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+
+    if (viewContentPending) sendViewContent();
+  }
+
+  function sendViewContent() {
+    if (viewContentSent || !pixelLoaded || !window.fbq) return;
+    viewContentSent = true;
+    window.fbq('track', 'ViewContent');
+  }
+
+  window.trackCoachEvent = function(eventName) {
+    if (getConsent() === "accepted" && pixelLoaded && window.fbq) {
+      window.fbq('track', eventName);
+    }
+  };
+
+  window.trackCoachCustomEvent = function(eventName) {
+    if (getConsent() === "accepted" && pixelLoaded && window.fbq) {
+      window.fbq('trackCustom', eventName);
+    }
+  };
+
+  window.trackCoachGroupClick = function() {
+    window.trackCoachEvent('Contact');
+    window.trackCoachCustomEvent('JoinGroup');
+  };
+
+  window.acceptCoachTracking = function() {
+    try {
+      localStorage.setItem("coachTriumphantMetaConsent", "accepted");
+    } catch (error) {}
+    loadMetaPixel();
+
+    const banner = document.getElementById("consentBanner");
+    if (banner) banner.hidden = true;
+  };
+
+  window.declineCoachTracking = function() {
+    try {
+      localStorage.setItem("coachTriumphantMetaConsent", "declined");
+    } catch (error) {}
+
+    const banner = document.getElementById("consentBanner");
+    if (banner) banner.hidden = true;
+  };
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const consent = getConsent();
+    const banner = document.getElementById("consentBanner");
+
+    if (consent === "accepted") {
+      loadMetaPixel();
+    } else if (consent !== "declined" && banner) {
+      banner.hidden = false;
+    }
+
+    const learnSection = document.getElementById("learn");
+
+    if ("IntersectionObserver" in window && learnSection) {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            viewContentPending = true;
+            sendViewContent();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.35 });
+
+      observer.observe(learnSection);
+    }
+
+    document.querySelectorAll("[data-track-group]").forEach(function(link) {
+      link.addEventListener("click", function() {
+        window.trackCoachGroupClick();
+      });
+    });
+  });
+})();
+</script>
 </head>
 
 <body>
+
 <header class="container">
   <a class="logo" href="#">COACH <span>TRIUMPHANT</span></a>
   <a href="#register" class="btn">REGISTER FREE</a>
@@ -201,7 +344,6 @@ footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
    Get introduced to ghostwriting and understand the
    foundations of turning writing into a professional service.
   </p>
-
   <div class="cards">
    <article class="card">
     <div class="number">DAY 01</div>
@@ -250,7 +392,7 @@ footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
    </p>
   </div>
   <div>
-   <img src="coach-triumphant.jfif" class="coach-photo"
+   <img src="assets/coach-triumphant.jfif" class="coach-photo"
     alt="Coach Triumphant, Ghostwriting Masterclass instructor">
   </div>
  </div>
@@ -296,8 +438,8 @@ footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
   <div class="form-box">
    <div class="eyebrow center">Your journey starts here</div>
    <h2>Reserve Your Free Spot</h2>
-   <p>Complete the registration form and continue to WhatsApp
-   to send your application.</p>
+   <p>Complete the registration form to continue directly
+   to the masterclass WhatsApp group invitation.</p>
 
    <form id="registrationForm">
     <label for="name">Full Name</label>
@@ -312,7 +454,7 @@ footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
      placeholder="Enter your email address">
 
     <label for="experience">Your writing experience</label>
-    <select id="experience" required>
+    <select id="experience" name="experience" required>
      <option value="">Select an option</option>
      <option>I'm a complete beginner</option>
      <option>I enjoy writing</option>
@@ -325,9 +467,16 @@ footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
     </button>
    </form>
 
+   <a class="outline group-link"
+      href="https://chat.whatsapp.com/BzRiDQN9xUKDsc0QBf0UXj"
+      target="_blank" rel="noopener noreferrer"
+      data-track-group>
+      ALREADY REGISTERED? JOIN THE WHATSAPP GROUP →
+   </a>
+
    <p class="small">
-    Your details will be included in a WhatsApp message to Coach
-    Triumphant. You must press Send to submit it.
+    Your form details are not stored by this website and are
+    not sent to Meta. Submitting the form opens the group invitation.
    </p>
    <p class="small">
     Class duration: 3 days. Starting date and time: To be announced.
@@ -374,7 +523,13 @@ footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
   <p style="color:var(--muted)">
    Join Coach Triumphant's FREE 3-Day Ghostwriting Masterclass.
   </p>
-  <a class="btn" href="#register">REGISTER FOR FREE →</a>
+  <div class="final-actions">
+   <a class="btn" href="#register">REGISTER FOR FREE →</a>
+   <a class="outline"
+      href="https://chat.whatsapp.com/BzRiDQN9xUKDsc0QBf0UXj"
+      target="_blank" rel="noopener noreferrer"
+      data-track-group>JOIN WHATSAPP GROUP →</a>
+  </div>
  </div>
 </section>
 </main>
@@ -386,8 +541,27 @@ footer{border-top:1px solid #333;padding:25px 0;color:#999;font-size:12px}
  </div>
 </footer>
 
+<!-- Tracking consent notice -->
+<div class="consent-banner" id="consentBanner" role="dialog"
+     aria-label="Privacy and tracking choices" aria-live="polite" hidden>
+ <strong>Privacy and tracking choices</strong>
+ <p>
+  We use Meta Pixel to measure visits and interactions with this
+  masterclass page and its WhatsApp invitation. You can accept or
+  decline this optional advertising tracking. Your form details
+  are not sent to Meta.
+ </p>
+ <div class="consent-actions">
+  <button class="btn" type="button" onclick="acceptCoachTracking()">
+   Accept tracking
+  </button>
+  <button class="consent-decline" type="button" onclick="declineCoachTracking()">
+   Decline
+  </button>
+ </div>
+</div>
+
 <script>
-const COACH_WHATSAPP = "2348159713821";
 const CLASS_GROUP =
  "https://chat.whatsapp.com/BzRiDQN9xUKDsc0QBf0UXj";
 
@@ -398,32 +572,35 @@ document.getElementById("registrationForm")
 .addEventListener("submit", function(e) {
  e.preventDefault();
 
- const name = document.getElementById("name").value.trim();
- const phone = document.getElementById("phone").value.trim();
- const email = document.getElementById("email").value.trim();
- const experience = document.getElementById("experience").value;
+ const form = this;
 
- if (!name || !phone || !experience) {
-   alert("Please complete the required fields.");
-   return;
- }
+ if (!form.reportValidity()) return;
 
- const message =
- `Hello Coach Triumphant! I want to register for your FREE 3-Day Ghostwriting Masterclass.
+ /*
+  * No form field values are sent to Meta.
+  * Lead is recorded only after the browser validates the form.
+  */
+ window.trackCoachEvent("Lead");
 
-Full Name: ${name}
-WhatsApp Number: ${phone}
-Email: ${email || "Not provided"}
-Writing Experience: ${experience}
+ /*
+  * The registration action takes the visitor to the group
+  * invitation, so record the group invitation click as well.
+  */
+ window.trackCoachGroupClick();
 
-I look forward to learning with you!`;
+ const submitButton = form.querySelector('button[type="submit"]');
+ submitButton.disabled = true;
+ submitButton.textContent = "REDIRECTING TO WHATSAPP...";
 
- const url = "https://wa.me/" + COACH_WHATSAPP +
- "?text=" + encodeURIComponent(message);
-
- window.open(url, "_blank");
+ /*
+  * Brief delay gives the Pixel event time to enter its queue
+  * before the browser navigates to WhatsApp.
+  */
+ setTimeout(function() {
+   window.location.assign(CLASS_GROUP);
+ }, 500);
 });
-
 </script>
+
 </body>
 </html>
